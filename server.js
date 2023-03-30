@@ -4,11 +4,14 @@ const mustacheExpress = require('mustache-express')
 const session = require('express-session')
 const bcrypt = require('bcryptjs')
 const models = require('./models')
-app.set('views', './views')
+const path = require('path')
+const VIEWS_PATH = path.join(__dirname, '/views')
+app.engine('mustache', mustacheExpress(VIEWS_PATH + '/partials','.mustache'))
+app.set('views', VIEWS_PATH)
 app.set('view engine', 'mustache')
 app.use(express.urlencoded())
-app.engine('mustache', mustacheExpress())
 require('dotenv').config()
+app.use(express.static('static'))
 const PORT = process.env.PORT
 
 app.use(session({
@@ -19,8 +22,6 @@ app.use(session({
 app.get('/', (req, res) => {
     res.render('index')
 })
-
-
 
 
 
