@@ -2,16 +2,8 @@ const express = require("express")
 const router = express.Router()
 const authController = require("../controllers/authController")
 
-router.get("/login", (req, res) => {
-    res.render("login")
-})
+router.get("/login", authController.addOrGetUser)
 
-router.post("/login", authController.login)
-
-router.get("/signup", (req, res) => {
-    res.render("signup")
-})
-
-router.post("/signup", authController.signup)
+router.get("/get-user", authController.getUser)
 
 module.exports = router

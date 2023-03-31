@@ -6,6 +6,7 @@ const path = require("path")
 const VIEWS_PATH = path.join(__dirname, "/views")
 const PARTIALS_PATH = path.join(VIEWS_PATH, "/partials")
 require("dotenv").config()
+const { auth } = require("express-openid-connect")
 
 app.engine("mustache", mustacheExpress(PARTIALS_PATH, ".mustache"))
 
@@ -16,6 +17,19 @@ const PORT = process.env.PORT
 const authRouter = require("./routes/auth")
 const appRouter = require("./routes/app")
 
+const config = {
+    authRequired: false,
+    auth0Logout: true,
+    secret: process.env.AUTH_SECRET,
+    baseURL: process.env.BASE_URL,
+    clientID: process.env.CLIENT_ID,
+    issuerBaseURL: process.env.ISSUER_BASE_URL,
+}
+const routes = {
+    login: false,
+}
+
+app.use(auth(config, routes))
 app.use(express.urlencoded())
 app.use(express.static("static"))
 app.use(

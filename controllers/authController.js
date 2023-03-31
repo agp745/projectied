@@ -1,70 +1,38 @@
 const models = require("../models")
-const bcrypt = require("bcryptjs")
 const { Op } = require("sequelize")
+require("dotenv").config()
 
-const signup = async (req, res) => {
-    const user = req.body.username
-    const email = req.body.email
+const addOrGetUser = async (req, res) => {
+    res.oidc.login({
+        returnTo: "/auth/get-user",
+    })
+}
 
-    const users = await models.User.findAll({
+const getUser = async (req, res) => {
+    console.log(req.oidc.isAuthenticated())
+    console.log(req.oidc.user)
+    const username = req.oidc.user.nickname
+    const email = req.oidc.user.email
+
+    const user = await models.User.findOne({
         where: {
-            [Op.or]: [{ username: user }, { email: email }],
+            username: username,
+            email: email,
         },
     })
-    console.log(users)
-    const existingUserErr = "username &/or email is already registered"
 
-    if (users === []) {
-        res.render("signup", { existingErr: existingUserErr })
+    if (user) {
+        res.redirect("/home")
     } else {
-        const salt = await bcrypt.genSalt(10)
-        const hashedPassword = await bcrypt.hash(req.body.password, salt)
-
         const newUser = await models.User.build({
-            username: user,
+            username: username,
             email: email,
-            password: hashedPassword,
         })
 
-        if (req.session) {
-            req.session.user = req.body.username
-        }
-
         await newUser.save()
-        console.log("new user added")
-
+        console.log(`New user "${username}" added`)
         res.redirect("/home")
     }
 }
 
-const login = async (req, res) => {
-    const user = await models.User.findOne({
-        where: {
-            username: req.body.username,
-        },
-    })
-
-    const password = req.body.password
-    const hash = user.dataValues.password
-
-    if (user) {
-        const result = await bcrypt.compare(password, hash)
-
-        if (result) {
-            if (req.session) {
-                req.session.user = req.body.username
-            }
-            res.redirect("/home")
-        }
-    } else {
-        res.render("login", { err: "invalid username" })
-    }
-}
-
-const signout = async (req, res) => {
-    const user = req.session.user
-    req.session.user = null
-    res.render("login", { message: `successfully signed out as ${user}` })
-}
-
-module.exports = { signup, login, signout }
+module.exports = { addOrGetUser, getUser }
