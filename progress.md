@@ -6,7 +6,6 @@
 
 - Implemented AUTH0
 - BLOCKERS:
-  - Figure out how to get github/gmail emails.
-    - Authentication Token in header.
+  - DELETE USER/ACCOUNT
 
 ## Evan
