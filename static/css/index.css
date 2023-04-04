@@ -1,3 +1,16 @@
 .wrapper {
     display: flex;
+    background-color: aqua;
+}
+
+.projectsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#projectImg {
+    width: 10rem;
+    height: 6rem;
+    object-fit: cover;
 }
