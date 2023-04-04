@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Your Projects</h1>
+
+   
+
+    <div id="newProject">
+        <p>Have a new project?</p>
+        <a href="/create-project"><button>Create</button></a>
+    </div>
+
+    <section id="projectsList" class="projectsWrapper">
+        {{#projects}}
+        <div id="project">
+        <a href="/project/{{id}}">
+            <i>{{id}}<i>
+            <b>{{title}}</b>
+            <p>{{description}}</p>
+            <img id="projectImg" src="{{imageURL}}" style="max-width: 10rem">
+        </a>
+        </div>
+        <b>-------------------------------</b>
+        {{/projects}}
+    </section>
+
+    <script src="/js/imageGenerator.js"></script>
+</body>
+</html>
