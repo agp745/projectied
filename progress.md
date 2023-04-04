@@ -9,3 +9,5 @@
   - DELETE USER/ACCOUNT
 
 ## Evan
+
+- Built navbar and sidebar partials
