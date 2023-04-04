@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body>
+
+    {{> menu}}
+    {{> sidebar}}
+<div class="wrapper">
+    <h1>Create Project</h1>
+
+    <form method="post" action="/create-project">
+        <label for="title">Title: 
+            <input type="text" id="title" placeholder="enter title here" name="title">
+        </label>
+
+        <label for="description">Description: 
+            <input type="text" id="description" placeholder="enter description here" name="description">
+        </label>
+
+        <label for="imageURL">image url (optional): 
+            <input type="text" id="imageURL" placeholder="enter imageURL here" name="imageURL">
+        </label>
+
+        <button>Create</button>
+    </form>
+</div>
+    <script src="/js/menu.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script src="https://kit.fontawesome.com/b72e7f232b.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+</body>
+</html>
