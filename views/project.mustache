@@ -15,16 +15,14 @@
 <body>
 
     {{> menu}}
-    {{> sidebar}}
 
     <div class="content">
-        <a href="/home">home</a>
-        <a href="/projects">projects</a>
-        <br>
-        <br>
-        {{title}}-{{description}}
-        <br>
-        <img src="{{imageURL}}">
+        {{> sidebar}}
+        <section class="projectsWrapper">
+            <div>{{title}}-{{description}}</div>
+            <br>
+            <img src="{{imageURL}}">
+        </section>
     </div>
 
 
