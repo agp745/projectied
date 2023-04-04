@@ -2,21 +2,22 @@ const models = require("../models")
 const { Op } = require("sequelize")
 const randomImage = require("../static/js/imageGenerator")
 
-const homePage = async (req, res) => {
-    const user = req.oidc.user.nickname
-    const imageURL = req.oidc.user.picture
+// const homePage = async (req, res) => {
+//     const user = req.oidc.user.nickname
+//     const imageURL = req.oidc.user.picture
 
-    res.render("index", { user: user, image: imageURL })
-}
+//     res.render("index", { user: user, image: imageURL })
+// }
 
-const projectsLanding = async (req, res) => {
+const listProjects = async (req, res) => {
     const currentUser = await models.User.findOne({
         where: {
             username: req.oidc.user.nickname,
         },
     })
     const userId = currentUser.dataValues.id
-    const username = currentUser.dataValues.nickname
+    const user = req.oidc.user.nickname
+    const imageURL = req.oidc.user.picture
 
     const projects = await models.Project.findAll({
         where: {
@@ -25,7 +26,11 @@ const projectsLanding = async (req, res) => {
     })
     const paresedProjects = projects.map((project) => project.dataValues)
 
-    res.render("projectsLanding", { projects: paresedProjects })
+    res.render("index", {
+        projects: paresedProjects,
+        user: user,
+        image: imageURL,
+    })
 }
 
 const createProjectPage = async (req, res) => {
@@ -69,8 +74,7 @@ const renderProject = async (req, res) => {
 }
 
 module.exports = {
-    homePage,
-    projectsLanding,
+    listProjects,
     createProjectPage,
     createProject,
     renderProject,

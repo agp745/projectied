@@ -7,9 +7,9 @@ const {
     replaceImage,
 } = require("../static/js/imageGenerator")
 
-router.get("/home", appController.homePage)
+router.get("/home", appController.listProjects)
 
-router.get("/projects", appController.projectsLanding)
+// router.get("/projects", appController.projectsLanding)
 
 router.get("/create-project", appController.createProjectPage)
 

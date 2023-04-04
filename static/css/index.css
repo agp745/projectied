@@ -3,9 +3,7 @@ body {
 }
 
 .content {
-    /* margin-left: 16rem;  */
     display: flex;
-    /* margin-top: 80px; */
     background-color: aqua;
     overflow-y: hidden;
 }
