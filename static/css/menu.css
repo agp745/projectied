@@ -31,6 +31,10 @@ nav {
   justify-content: space-between;
   height: 70px;
   padding: 0 100px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 nav .logo{

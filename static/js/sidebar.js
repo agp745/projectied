@@ -10,3 +10,4 @@ sidebar.onclick = () => {
         arrowCollapse.classList = 'bx bx-arrow-from-right logo-name__icon';
     }
 }
+
