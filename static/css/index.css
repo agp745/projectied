@@ -1,3 +1,7 @@
+body {
+    overflow-y: hidden;
+}
+
 .content {
     /* margin-left: 16rem;  */
     display: flex;
@@ -26,6 +30,14 @@
 .projectsWrapper > :nth-child(2) {
     width: 100%;
     text-align: center;
+}
+
+#project {
+    transition: transform 0.3s ease-in-out;
+}
+
+#project:hover {
+    transform: scale(1.1);
 }
 
 #projectImg {
