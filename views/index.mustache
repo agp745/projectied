@@ -13,17 +13,33 @@
     <link rel="icon" type="image/x-icon" href="icon/logo.ico.svg">
 </head>
 <body>
-
     {{> menu}}
+
+    <div class="content">
     {{> sidebar}}
-    
-    <main class="content">
-        <div class="boards">
-            <div class="yourProjects">
-                <h1>Your Projects</h1>
+
+    <div class="main">
+
+        <section id="projectsList" class="projectsWrapper">
+            <h1>Your Projects</h1>
+            <div id="newProject">
+                <p>Have a new project?</p>
+                <a href="/create-project"><button>Create</button></a>
             </div>
-        </div>
-    </main>
+            {{#projects}}
+            <div id="project">
+                <a href="/project/{{id}}" class>
+                <b>{{title}}</b>
+                <p>{{description}}</p>
+                <img id="projectImg" src="{{imageURL}}">
+                </a>
+            </div>
+            {{/projects}}
+        </section>
+    </div>
+
+    </div>
+
 
     <script src="/js/menu.js"></script>
     <script src="/js/sidebar.js"></script>
