@@ -1,19 +1,35 @@
-.content{
-    margin-left: 16rem; 
-    margin-top: 80px;
+.content {
+    /* margin-left: 16rem;  */
+    display: flex;
+    /* margin-top: 80px; */
     background-color: aqua;
+    overflow-y: hidden;
+}
+
+.newProject {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 80px;
+    margin-left: 3rem;
 }
 
 .projectsWrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    margin-top: 80px;
+    margin-left: 3rem;
+}
+
+.projectsWrapper > :nth-child(1),
+.projectsWrapper > :nth-child(2) {
+    width: 100%;
+    text-align: center;
 }
 
 #projectImg {
     width: 10rem;
     height: 6rem;
     object-fit: cover;
-
 }
-
