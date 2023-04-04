@@ -1,6 +1,19 @@
 .content{
     margin-left: 16rem; 
     margin-top: 80px;
+    background-color: aqua;
+}
+
+.projectsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#projectImg {
+    width: 10rem;
+    height: 6rem;
+    object-fit: cover;
 
 }
 

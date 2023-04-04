@@ -1,5 +1,3 @@
-const images = document.querySelectorAll("img")
-
 const staticImages = [
     "images/beach.jpg",
     "images/desertlandscape.jpg",
@@ -16,13 +14,14 @@ const randomImage = (arr) => {
     return arr[randomIdx]
 }
 
-const replaceImage = () => {
-    for (let i = 0; i < images.length; i++) {
-        if (!images[i].src.includes(".")) {
-            let image = `http://localhost:8080/${randomImage(staticImages)}`
-            images[i].src = image
-        }
+const replaceImage = (imageArr, url) => {
+    let image = `http://localhost:8080/${randomImage(imageArr)}`
+    if (!url.includes(".")) {
+        const newURL = image
+        return newURL
+    } else {
+        return url
     }
 }
 
-replaceImage()
+module.exports = { staticImages, randomImage, replaceImage }

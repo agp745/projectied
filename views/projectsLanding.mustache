@@ -27,17 +27,18 @@
     <section id="projectsList" class="projectsWrapper">
         {{#projects}}
         <div id="project">
-        <a href="/project/{{id}}">
-            <i>{{id}}<i>
+        <a href="/project/{{id}}" class>
             <b>{{title}}</b>
             <p>{{description}}</p>
-            <img id="projectImg" src="{{imageURL}}" style="max-width: 10rem">
+            {{! <div class="imageDiv"></div> }}
+            <img id="projectImg" src="{{imageURL}}">
+            
         </a>
         </div>
-        <b>-------------------------------</b>
         {{/projects}}
     </section>
     </div>
+
 
     <script src="/js/imageGenerator.js"></script>
     <script src="/js/menu.js"></script>

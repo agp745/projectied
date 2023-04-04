@@ -1,5 +1,6 @@
 const models = require("../models")
 const { Op } = require("sequelize")
+const randomImage = require("../static/js/imageGenerator")
 
 const homePage = async (req, res) => {
     const user = req.oidc.user.nickname
@@ -9,8 +10,19 @@ const homePage = async (req, res) => {
 }
 
 const projectsLanding = async (req, res) => {
-    const projects = await models.Project.findAll({})
+    const currentUser = await models.User.findOne({
+        where: {
+            username: req.oidc.user.nickname,
+        },
+    })
+    const userId = currentUser.dataValues.id
+    const username = currentUser.dataValues.nickname
 
+    const projects = await models.Project.findAll({
+        where: {
+            user_id: userId,
+        },
+    })
     const paresedProjects = projects.map((project) => project.dataValues)
 
     res.render("projectsLanding", { projects: paresedProjects })
@@ -26,20 +38,22 @@ const createProject = async (req, res) => {
             username: req.oidc.user.nickname,
         },
     })
-
     const userId = currentUser.dataValues.id
+
+    const url = randomImage.replaceImage(
+        randomImage.staticImages,
+        req.body.imageURL
+    )
 
     const newProject = await models.Project.build({
         user_id: userId,
         title: req.body.title,
         description: req.body.description,
         admin: userId,
-        imageURL: req.body.imageURL,
+        imageURL: url,
     })
 
     const details = await newProject.save()
-
-    console.log(details)
 
     console.log(`new project "${details.title}" saved`)
 
@@ -48,7 +62,6 @@ const createProject = async (req, res) => {
 
 const renderProject = async (req, res) => {
     const id = req.params.project_id
-    console.log(id)
     const project = await models.Project.findByPk(id)
 
     const projectInfo = project.dataValues
