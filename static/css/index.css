@@ -1,3 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,300&display=swap'); */
+
+
+
 body {
     overflow-y: hidden;
 }
@@ -143,7 +149,6 @@ body {
     max-width: 20px;
     margin-right: 10px;
     opacity: 0.5;
-
 }
 
 .action .soMenu ul li a {
@@ -153,7 +158,7 @@ body {
     font-weight: 600;
     padding-left: 15px;
     text-decoration: none;
-    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -165,24 +170,6 @@ body {
     color: aquamarine;
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ::-webkit-scrollbar {
     height: 7px;

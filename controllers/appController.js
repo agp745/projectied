@@ -27,7 +27,19 @@ const listProjects = async (req, res) => {
 }
 
 const createProjectPage = async (req, res) => {
-    res.render("createProject")
+    const user = await models.User.findOne({
+        where: {
+            username: req.oidc.user.nickname,
+        },
+    })
+
+    const picture = user.dataValues.picture
+    const userInfo = {
+        image: picture,
+        user: req.oidc.user.nickname,
+    }
+
+    res.render("createProject", userInfo)
 }
 
 const createProject = async (req, res) => {
@@ -50,6 +62,8 @@ const createProject = async (req, res) => {
         admin: userId,
         imageURL: url,
     })
+
+
 
     const details = await newProject.save()
 
