@@ -1,0 +1,47 @@
+body {
+    overflow-y: hidden;
+}
+
+.content {
+    display: flex;
+    background-color: rgba(236, 242, 243, 0.315);
+    overflow-y: hidden;
+}
+
+.create-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 80px 2rem 0 2rem;
+    overflow: hidden;
+    align-items: center;
+    background-color: rgba(65, 46, 194, 0.8);
+    padding: 6rem;
+}
+
+.create-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project-meta {
+    align-items: left;
+    margin-top: 5rem;
+    margin-left: 1rem;
+}
+
+.project-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.project-description {
+    font-size: 1.4rem;
+}
+
+.project-admin {
+    font-style: italic;
+    font-size: 1.2rem;
+}
