@@ -67,6 +67,7 @@ const renderProject = async (req, res) => {
     const user = await models.User.findByPk(projectInfo.admin)
 
     const metaData = {
+        project_id: id,
         title: projectInfo.title,
         description: projectInfo.description,
         admin: user.dataValues.username,

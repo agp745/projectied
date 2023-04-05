@@ -25,7 +25,36 @@
             <div class="project-description">{{description}}</div>
             <div class="project-admin">{{admin}}</div>
         </section>
+
+        <section class="main">
+
+            <div class="addTask">
+                <form action="/todo/" method="post"></form>
+            </div>
+        
+            <div class="todo status">
+                <div class="status-title">Todo</div>
+                <div class="items"></div>
+                <form action="/todo/{{project_id}}" method="post">
+                    <input type="text" placeholdler="title">
+                    <input type="text" placeholdler="text">
+                    <button>Submit</button>
+                </form>
+            </div>
+
+            <div class="active status">
+                <div class="status-title">Active</div>
+                <div class="items"></div>
+            </div>
+
+            <div class="completed status">
+                <div class="status-title">Completed</div>
+                <div class="items"></div>
+            </div>
+        
+        </section>
     </div>
+
 
     <script src="/js/menu.js"></script>
     <script src="/js/sidebar.js"></script>

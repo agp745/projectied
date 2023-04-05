@@ -10,4 +10,10 @@ router.post("/create-project", appController.createProject)
 
 router.get("/project/:project_id", appController.renderProject)
 
+router.post("/project/todo/:project_id")
+
+router.post("/project/active/:project_id")
+
+router.post("/project/completed/:project_id")
+
 module.exports = router

@@ -45,3 +45,20 @@ body {
     font-style: italic;
     font-size: 1.2rem;
 }
+
+.main {
+    display: flex;
+    gap: 3rem;
+    margin-top: 12rem;
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    width: 10rem;
+}
+
+.status-title {
+    text-align: center;
+}
