@@ -2,13 +2,6 @@ const models = require("../models")
 const { Op } = require("sequelize")
 const randomImage = require("../static/js/imageGenerator")
 
-// const homePage = async (req, res) => {
-//     const user = req.oidc.user.nickname
-//     const imageURL = req.oidc.user.picture
-
-//     res.render("index", { user: user, image: imageURL })
-// }
-
 const listProjects = async (req, res) => {
     const currentUser = await models.User.findOne({
         where: {
@@ -70,7 +63,17 @@ const renderProject = async (req, res) => {
     const project = await models.Project.findByPk(id)
 
     const projectInfo = project.dataValues
+
     res.render("project", projectInfo)
+}
+
+const getImage = async (req, res) => {
+    const id = req.params.project_id
+    const project = await models.Project.findByPk(id)
+
+    const image = project.dataValues.imageURL
+
+    res.json({ image: image })
 }
 
 module.exports = {
@@ -78,4 +81,5 @@ module.exports = {
     createProjectPage,
     createProject,
     renderProject,
+    getImage,
 }
