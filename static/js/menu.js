@@ -26,3 +26,8 @@ searchBtn.onclick = () => {
   searchBtn.classList.add("hide")
   cancelBtn.classList.add("show")
 }
+
+function menuToggle() {
+  const toggleMenu = document.querySelector('.soMenu')
+  toggleMenu.classList.toggle('active')
+}

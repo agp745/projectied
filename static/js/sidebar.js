@@ -11,7 +11,3 @@ sidebar.onclick = () => {
     }
 }
 
-function menuToggle() {
-    const toggleMenu = document.querySelector('.soMenu')
-    toggleMenu.classList.toggle('active')
-}

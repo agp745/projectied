@@ -59,104 +59,130 @@ body {
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
- .action {
+.icons-size{
+    color: #333;
+    font-size: 14px;
+}
+
+.action {
     position: fixed;
-    left: 29px;
-    bottom: 54px;
+    right: 40px;
+    top: 15px;
 }
 
 .action .profile {
-    position: relative;
-    width: 40px;
-    height: 40px;
     border-radius: 50%;
-    overflow: hidden;
     cursor: pointer;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    position: relative;
 }
 
 .action .profile img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
     object-fit: cover;
 }
 
 .action .soMenu {
-    position: absolute;
-    bottom: -30px;
-    left: 220px;
-    padding: 10px 20px;
-    background: #fff;
-    width: 200px;
-    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    box-sizing: 0 5px 25px rgba(0,0,0,0.1);
     border-radius: 5px;
-    transition: 0.5s;
+    padding: 10px 20px;
+    position: absolute;
+    right: -20px;
+    width: 200px;
+    top: 120px;
     visibility: hidden;
-    opacity: 0;
 }
 
 .action .soMenu.active {
-    visibility: visible;
     opacity: 1;
-}
-
-.action .soMenu h3 {
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    padding: 20px 0;
-    font-weight: 500;
-    font-size: 18px;
-    color: #555;
-    line-height: 1.2em;
+    top: 55px;
+    visibility: visible;
 }
 
 .action .soMenu::before {
-    content:'';
-    position: absolute;
-    top: 100px;
-    right: 190px;
-    width: 20px;
+    background-color: #fff;
+    content: '';
     height: 20px;
-    background: #fff;
+    position: absolute;
+    right: 30px;
     transform: rotate(45deg);
+    top: -5px;
+    width: 20px;
+} 
+
+.action .soMenu h3 {
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3em;
+    padding: 20px 0px;
+    text-align: center;
+    width: 100%;
 }
 
 .action .soMenu ul li {
-    list-style: none;
-    padding: 10px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    display: flex;
     align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: left;
+    list-style: none;
+    padding: 10px 0px;
 }
 
 .action .soMenu ul li i {
     max-width: 20px;
     margin-right: 10px;
     opacity: 0.5;
-    transition: 0.5s;
-}
 
-.action .soMenu ul li:hover i {
-    opacity: 1;
-    cursor: pointer;
 }
 
 .action .soMenu ul li a {
     display: inline-block;
-    text-decoration: none;
     color: #555;
-    font-weight: 500;
-    transition: 0.5s;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+
+.action .soMenu ul li:hover i {
+    opacity: 1;
 }
 
 .action .soMenu ul li:hover a {
     color: aquamarine;
-} 
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ::-webkit-scrollbar {
     height: 7px;
