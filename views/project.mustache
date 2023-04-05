@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/menu.css">
     <link rel="stylesheet" href="/css/sidebar.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/project.css">
     <link rel="stylesheet" href="/css/backImg.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
@@ -18,15 +18,14 @@
     {{> menu}}
     <div id="imageURL" style="display: none">{{imageURL}}</div>
 
-
-
     <div class="content">
         {{> sidebar}}
-        <section class="projectsWrapper">
-            <div>{{title}}-{{description}}</div>
+        <section class="project-meta">
+            <div class="project-title">{{title}}</div>
+            <div class="project-description">{{description}}</div>
+            <div class="project-admin">{{admin}}</div>
         </section>
     </div>
-
 
     <script src="/js/menu.js"></script>
     <script src="/js/sidebar.js"></script>

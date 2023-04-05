@@ -64,16 +64,16 @@ const renderProject = async (req, res) => {
 
     const projectInfo = project.dataValues
 
-    res.render("project", projectInfo)
-}
+    const user = await models.User.findByPk(projectInfo.admin)
 
-const getImage = async (req, res) => {
-    const id = req.params.project_id
-    const project = await models.Project.findByPk(id)
+    const metaData = {
+        title: projectInfo.title,
+        description: projectInfo.description,
+        admin: user.dataValues.username,
+        imageURL: projectInfo.imageURL,
+    }
 
-    const image = project.dataValues.imageURL
-
-    res.json({ image: image })
+    res.render("project", metaData)
 }
 
 module.exports = {
@@ -81,5 +81,4 @@ module.exports = {
     createProjectPage,
     createProject,
     renderProject,
-    getImage,
 }

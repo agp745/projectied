@@ -1,11 +1,6 @@
 const express = require("express")
 const router = express.Router()
 const appController = require("../controllers/appController")
-// const {
-//     staticImages,
-//     randomImage,
-//     replaceImage,
-// } = require("../static/js/imageGenerator")
 
 router.get("/home", appController.listProjects)
 
