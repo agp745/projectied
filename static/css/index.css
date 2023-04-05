@@ -1,3 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,300&display=swap'); */
+
+
+
 body {
     overflow-y: hidden;
 }
@@ -128,6 +134,7 @@ body {
     padding: 20px 0px;
     text-align: center;
     width: 100%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .action .soMenu ul li {
@@ -137,6 +144,8 @@ body {
     justify-content: left;
     list-style: none;
     padding: 10px 0px;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 .action .soMenu ul li i {
