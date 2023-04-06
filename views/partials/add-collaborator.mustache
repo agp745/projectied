@@ -2,9 +2,10 @@
     <div class="modal-content">
         <div class="closeC">+</div>
         <h3>Add a New Collaborator</h3>
-        <form action="" method="POST">
+        <form action="/collab/add-collaborator/{{project_id}}" method="POST">
             <h5>Enter Username or E-mail:</h5>
-            <input class="input" type="text" placeholder="Enter Here" name="">
+            <input class="input" type="text" placeholder="Enter Here" name="addedUser">
+            <input type="hidden" name="project_id" value="{{project_id}}">
             <button class="createProjectButton"><span>Add </span></button>
         </form>
     </div>

@@ -16,6 +16,7 @@ app.set("view engine", "mustache")
 const PORT = process.env.PORT
 const authRouter = require("./routes/auth")
 const appRouter = require("./routes/app")
+const collabRouter = require("./routes/collaborators")
 
 const config = {
     authRequired: false,
@@ -40,6 +41,7 @@ app.use(
 )
 app.use("/auth", authRouter)
 app.use(appRouter)
+app.use(collabRouter)
 
 app.get("/", (req, res) => {
     res.redirect("/auth/login")
