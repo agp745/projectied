@@ -49,7 +49,6 @@ router.post(
 
 //----------------------------------------------------
 
-router.post('/delete-project/:project_id', appController.deleteProject)
-
+router.post("/delete-project/:project_id", appController.deleteProject)
 
 module.exports = router
