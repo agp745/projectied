@@ -11,7 +11,7 @@ const addTodo = async (req, res) => {
 
     await item.save()
 
-    console.log(`new item created`)
+    console.log(`new todo item created`)
     res.redirect(`/project/${id}`)
 }
 
@@ -66,6 +66,20 @@ const activate = async (req, res) => {
     res.redirect(`/project/${project_id}`)
 }
 
+const addActive = async (req, res) => {
+    const id = req.body.id
+
+    const item = await models.Active.build({
+        project_id: id,
+        active_text: req.body.text,
+    })
+
+    await item.save()
+
+    console.log(`new active item created`)
+    res.redirect(`/project/${id}`)
+}
+
 const sendActives = async (req, res) => {
     const id = req.params.project_id
 
@@ -118,6 +132,20 @@ const complete = async (req, res) => {
     res.redirect(`/project/${project_id}`)
 }
 
+const addCompleted = async (req, res) => {
+    const id = req.body.id
+
+    const item = await models.Complete.build({
+        project_id: id,
+        complete_text: req.body.text,
+    })
+
+    await item.save()
+
+    console.log(`new completed item created`)
+    res.redirect(`/project/${id}`)
+}
+
 const sendCompleted = async (req, res) => {
     const id = req.params.project_id
 
@@ -151,9 +179,11 @@ module.exports = {
     sendTodo,
     deleteTodo,
     activate,
+    addActive,
     sendActives,
     deleteActive,
     complete,
+    addCompleted,
     sendCompleted,
     deleteCompleted,
 }
