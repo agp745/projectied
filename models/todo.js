@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             project_id: DataTypes.INTEGER,
             todo_text: DataTypes.STRING,
+            date: DataTypes.STRING,
         },
         {
             sequelize,

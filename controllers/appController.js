@@ -19,8 +19,25 @@ const listProjects = async (req, res) => {
     })
     const paresedProjects = projects.map((project) => project.dataValues)
 
+    //-----
+
+    const collabProjects = await models.Share.findAll({
+        where: {
+            user_id: userId,
+        },
+    })
+
+    const parsedCollabs = await Promise.all(
+        collabProjects.map(async (project) => {
+            const id = project.dataValues.project_id
+            const list = await models.Project.findByPk(id)
+            return list.dataValues
+        })
+    )
+
     res.render("index", {
         projects: paresedProjects,
+        collabs: parsedCollabs,
         user: user,
         image: imageURL,
     })
@@ -63,8 +80,6 @@ const createProject = async (req, res) => {
         imageURL: url,
     })
 
-
-
     const details = await newProject.save()
 
     console.log(`new project "${details.title}" saved`)
@@ -82,7 +97,7 @@ const renderProject = async (req, res) => {
 
     const username = req.oidc.user.nickname
     const imageURL = req.oidc.user.picture
-    
+
     const metaData = {
         user: username,
         image: imageURL,
@@ -92,8 +107,6 @@ const renderProject = async (req, res) => {
         admin: user.dataValues.username,
         imageURL: projectInfo.imageURL,
     }
-
-
 
     res.render("project", metaData)
 }

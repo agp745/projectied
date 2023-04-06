@@ -20,7 +20,7 @@
     {{> create-project}}
         <section id="projectsList" class="projectsWrapper">
             <h1 class="subtitles">Your Projects</h1>
-            <section class="yourProjects">
+            <section class="projectList yourProjects">
                 {{#projects}}
                 <div id="project">
                     <a href="/project/{{id}}" class="linkStyle">
@@ -32,8 +32,15 @@
             </section>
 
             <h1 class="subtitles">Shared Projects</h1>
-            <section>
-                <div>--> Collab content gonna go here <--</div>
+            <section class="projectList sharedProjects">
+                {{#collabs}}
+                <div id="project">
+                    <a href="/project/{{id}}" class="linkStyle">
+                    <b>{{title}}</b>
+                    <img id="projectImg" src="{{imageURL}}">
+                    </a>
+                </div>
+                {{/collabs}}
             </section>
         </section>
 
