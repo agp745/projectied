@@ -15,7 +15,7 @@ const getTodos = async (id) => {
 
     const items = request.map((todo) => {
         return `
-        <form method="post" action="/">
+        <form method="post" action="/project/todo/delete/${todo.project_id}/${todo.id}">
             <div>${todo.todo_title}</div>
             <div>${todo.todo_text}</div>
             <div>${todo.createdAt}
@@ -38,9 +38,10 @@ const getActives = async (id) => {
         (response) => response.json()
     )
 
+    console.log(request)
     const items = request.map((active) => {
         return `
-        <form method="post" action="/">
+        <form method="post" action="/project/active/delete/${active.project_id}/${active.id}">
             <div>${active.active_title}</div>
             <div>${active.active_text}</div>
             <div>${active.createdAt}
@@ -65,7 +66,7 @@ const getCompleted = async (id) => {
 
     const items = request.map((completed) => {
         return `
-        <form method="post" action="/">
+        <form method="post" action="/project/completed/delete/${completed.project_id}/${completed.id}">
             <div>${completed.complete_title}</div>
             <div>${completed.complete_text}</div>
             <div>${completed.createdAt}
@@ -78,7 +79,5 @@ const getCompleted = async (id) => {
 }
 
 getTodos(id)
-
 getActives(id)
-
 getCompleted(id)

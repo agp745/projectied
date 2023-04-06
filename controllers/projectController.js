@@ -30,6 +30,20 @@ const sendTodo = async (req, res) => {
     res.json(todosInfo)
 }
 
+const deleteTodo = async (req, res) => {
+    const id = req.params.todo_id
+    const project_id = req.params.project_id
+
+    await models.Todo.destroy({
+        where: {
+            id: id,
+        },
+    })
+    console.log("deleted item")
+
+    res.redirect(`/project/${project_id}`)
+}
+
 const activate = async (req, res) => {
     const project_id = req.params.project_id
     const todo_id = req.params.todo_id
@@ -50,7 +64,7 @@ const activate = async (req, res) => {
             id: todo_id,
         },
     })
-    console.log("item deleted from todo")
+    console.log("...")
 
     res.redirect(`/project/${project_id}`)
 }
@@ -67,6 +81,21 @@ const sendActives = async (req, res) => {
     const activesInfo = actives.map((item) => item.dataValues)
 
     res.json(activesInfo)
+}
+
+const deleteActive = async (req, res) => {
+    const id = req.params.active_id
+    const project_id = req.params.project_id
+
+    await models.Active.destroy({
+        where: {
+            id: id,
+        },
+    })
+
+    console.log("item deleted")
+
+    res.redirect(`/project/${project_id}`)
 }
 
 const complete = async (req, res) => {
@@ -89,7 +118,7 @@ const complete = async (req, res) => {
             id: active_id,
         },
     })
-    console.log("item no longer active")
+    console.log("...")
 
     res.redirect(`/project/${project_id}`)
 }
@@ -108,11 +137,28 @@ const sendCompleted = async (req, res) => {
     res.json(completedInfo)
 }
 
+const deleteCompleted = async (req, res) => {
+    const id = req.params.completed_id
+    const project_id = req.params.project_id
+
+    await models.Complete.destroy({
+        where: {
+            id: id,
+        },
+    })
+    console.log("item deleted")
+
+    res.redirect(`/project/${project_id}`)
+}
+
 module.exports = {
     addTodo,
     sendTodo,
+    deleteTodo,
     activate,
     sendActives,
+    deleteActive,
     complete,
     sendCompleted,
+    deleteCompleted,
 }
