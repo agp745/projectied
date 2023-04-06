@@ -80,13 +80,20 @@ const renderProject = async (req, res) => {
 
     const user = await models.User.findByPk(projectInfo.admin)
 
+    const username = req.oidc.user.nickname
+    const imageURL = req.oidc.user.picture
+    
     const metaData = {
+        user: username,
+        image: imageURL,
         project_id: id,
         title: projectInfo.title,
         description: projectInfo.description,
         admin: user.dataValues.username,
         imageURL: projectInfo.imageURL,
     }
+
+
 
     res.render("project", metaData)
 }

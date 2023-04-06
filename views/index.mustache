@@ -17,13 +17,13 @@
 
     <div class="content">
     {{> sidebar}}
-
+    {{> create-project}}
         <section id="projectsList" class="projectsWrapper">
             <h1 class="subtitles">Your Projects</h1>
             <section class="yourProjects">
                 {{#projects}}
                 <div id="project">
-                    <a href="/project/{{id}}" class>
+                    <a href="/project/{{id}}" class="linkStyle">
                     <b>{{title}}</b>
                     <img id="projectImg" src="{{imageURL}}">
                     </a>
