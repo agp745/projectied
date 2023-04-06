@@ -1,0 +1,191 @@
+/* Create project popup modal */
+.bg-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 50;
+}
+
+
+.modal-content {
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 5px 5px 20px 5px;
+    position: relative;
+}
+
+
+.modal-content h3 {
+    color: #fff;
+    background-color: #292932;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.input {
+    width: 50%;
+    display: block;
+    margin: 15px auto;
+    border-radius: 4px;
+}
+
+.input[type=text] {
+    padding: 12px 20px;
+    box-sizing: border-box;
+}
+
+.close {
+    position: absolute;
+    top: -9px;
+    right: 12px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    color: #fff;
+}
+
+.close:hover {
+    color: #ff3d00;
+}
+
+.createProjectButton {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+    width: 100px;
+    height: 15px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.createProjectButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    text-align: center;
+    bottom: 10px;
+}
+
+.createProjectButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.createProjectButton:hover span {
+    padding-right: 25px;
+}
+
+.createProjectButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/* Add collaborator popup modal */
+.collab-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 50;
+}
+
+.modal-add-collab {
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 5px 5px 20px 5px;
+    position: relative;
+}
+
+.modal-add-collab h3 {
+    color: #fff;
+    background-color: #292932;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.closeC {
+    position: absolute;
+    top: -9px;
+    right: 12px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    color: #fff;
+}
+
+.closeC:hover {
+    color: #ff3d00;
+}
+
+/* Show Collaborators popup modal */
+
+.show-collab-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 50;
+}
+
+.modal-show-collab {
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 5px 5px 20px 5px;
+    position: relative;
+}
+
+.modal-show-collab h3 {
+    color: #fff;
+    background-color: #292932;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.closeS {
+    position: absolute;
+    top: -9px;
+    right: 12px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    color: #fff;
+}
+
+.closeS:hover {
+    color: #ff3d00;
+}

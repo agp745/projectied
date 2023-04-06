@@ -19,6 +19,10 @@ function addCollabForm() {
     document.querySelector('.collab-modal').style.display = 'flex';
 }
 
+function showCollabForm() {
+    document.querySelector('.show-collab-modal').style.display = 'flex';
+}
+
 document.querySelector('.close').addEventListener('click', function() {
     document.querySelector('.bg-modal').style.display = 'none'
 })
@@ -26,3 +30,8 @@ document.querySelector('.close').addEventListener('click', function() {
 document.querySelector('.closeC').addEventListener('click', function() {
     document.querySelector('.collab-modal').style.display = 'none'
 })
+
+document.querySelector('.closeS').addEventListener('click', function() {
+    document.querySelector('.show-collab-modal').style.display = 'none'
+})
+

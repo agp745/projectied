@@ -70,7 +70,7 @@ const getCompleted = async (id) => {
 
     const items = request.map((completed) => {
         return `
-        <div class="taskCard">
+        <div class="completeTaskCard">
             <form method="post" action="/project/completed/delete/${completed.info.project_id}/${completed.info.id}">
                 <div>${completed.info.complete_text}</div>
                 <div class="dateStyle">${completed.info.date}</div>

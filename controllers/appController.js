@@ -108,6 +108,13 @@ const renderProject = async (req, res) => {
         imageURL: projectInfo.imageURL,
     }
 
+    // const collaborators = await models.Share.findAll({
+    //     where: {
+    //         project_id: id,
+
+    //     }
+    // })
+
     res.render("project", metaData)
 }
 
