@@ -31,7 +31,6 @@
 
             <div class="addTask">
                 <form action="/project/todo/{{project_id}}" method="post">
-                    <input type="text" placeholder="title" name="title">
                     <input type="text" placeholder="text" name="text">
                     <input type="hidden" name="id" value={{project_id}}>
                     <button>Submit</button>
