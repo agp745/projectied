@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
             project_id: DataTypes.INTEGER,
             todo_text: DataTypes.STRING,
             date: DataTypes.STRING,
+            picture: DataTypes.STRING,
         },
         {
             sequelize,

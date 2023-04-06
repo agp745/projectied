@@ -8,10 +8,13 @@ const addTodo = async (req, res) => {
     let month = new Date().getMonth()
     const date = `${(month += 1)}/${day}`
 
+    const userPhoto = req.oidc.user.picture
+
     const item = await models.Todo.build({
         project_id: id,
         todo_text: req.body.text,
         date: date,
+        picture: userPhoto,
     })
 
     await item.save()
@@ -29,14 +32,14 @@ const sendTodo = async (req, res) => {
         },
     })
 
-    const userPhoto = req.oidc.user.picture
+    const todosInfo = todos.map((item) => item.dataValues)
 
-    const todosInfo = todos.map((item) => {
-        return {
-            info: item.dataValues,
-            image: userPhoto,
-        }
-    })
+    // const todosInfo = todos.map((item) => {
+    //     return {
+    //         info: item.dataValues,
+    //         image: userPhoto,
+    //     }
+    // })
 
     res.json(todosInfo)
 }
@@ -64,10 +67,14 @@ const activate = async (req, res) => {
     let month = new Date().getMonth()
     const date = `${(month += 1)}/${day}`
 
+    const todo = await models.Todo.findByPk(todo_id)
+    const picture = todo.dataValues.picture
+
     const activeItem = await models.Active.build({
         project_id: project_id,
         active_text: text,
         date: date,
+        picture: picture,
     })
 
     await activeItem.save()
@@ -90,10 +97,13 @@ const addActive = async (req, res) => {
     let month = new Date().getMonth()
     const date = `${(month += 1)}/${day}`
 
+    const userPhoto = req.oidc.user.picture
+
     const item = await models.Active.build({
         project_id: id,
         active_text: req.body.text,
         date: date,
+        picture: userPhoto,
     })
 
     await item.save()
@@ -111,14 +121,7 @@ const sendActives = async (req, res) => {
         },
     })
 
-    const userPhoto = req.oidc.user.picture
-
-    const activesInfo = actives.map((item) => {
-        return {
-            info: item.dataValues,
-            image: userPhoto,
-        }
-    })
+    const activesInfo = actives.map((item) => item.dataValues)
 
     res.json(activesInfo)
 }
@@ -147,10 +150,14 @@ const complete = async (req, res) => {
     let month = new Date().getMonth()
     const date = `${(month += 1)}/${day}`
 
+    const active = await models.Active.findByPk(active_id)
+    const picture = active.dataValues.picture
+
     const completedItem = await models.Complete.build({
         project_id: project_id,
         complete_text: text,
         date: date,
+        picture: picture,
     })
 
     await completedItem.save()
@@ -173,10 +180,13 @@ const addCompleted = async (req, res) => {
     let month = new Date().getMonth()
     const date = `${(month += 1)}/${day}`
 
+    const userPhoto = req.oidc.user.picture
+
     const item = await models.Complete.build({
         project_id: id,
         complete_text: req.body.text,
         date: date,
+        picture: userPhoto,
     })
 
     await item.save()
@@ -194,14 +204,7 @@ const sendCompleted = async (req, res) => {
         },
     })
 
-    const userPhoto = req.oidc.user.picture
-
-    const completedInfo = completed.map((item) => {
-        return {
-            info: item.dataValues,
-            image: userPhoto,
-        }
-    })
+    const completedInfo = completed.map((item) => item.dataValues)
 
     res.json(completedInfo)
 }

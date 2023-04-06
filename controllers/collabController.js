@@ -1,6 +1,5 @@
 const models = require("../models")
 const { Op } = require("sequelize")
-const e = require("express")
 
 const addCollaborator = async (req, res) => {
     const project_id = req.params.project_id
