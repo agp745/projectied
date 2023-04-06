@@ -16,7 +16,6 @@ const getTodos = async (id) => {
     const items = request.map((todo) => {
         return `
         <form method="post" action="/project/todo/delete/${todo.project_id}/${todo.id}">
-            <div>${todo.todo_title}</div>
             <div>${todo.todo_text}</div>
             <div>${todo.createdAt}
             <input type="hidden" name="id" value="${todo.id}">
@@ -24,7 +23,6 @@ const getTodos = async (id) => {
         </form>
 
         <form method="post" action="/project/active/${todo.project_id}/${todo.id}">
-            <input type="hidden" name="title" value="${todo.todo_title}">
             <input type="hidden" name="text" value="${todo.todo_text}">
             <button>Start</button>
         </form>
@@ -42,7 +40,6 @@ const getActives = async (id) => {
     const items = request.map((active) => {
         return `
         <form method="post" action="/project/active/delete/${active.project_id}/${active.id}">
-            <div>${active.active_title}</div>
             <div>${active.active_text}</div>
             <div>${active.createdAt}
             <input type="hidden" name="id" value="${active.id}">
@@ -50,7 +47,6 @@ const getActives = async (id) => {
         </form>
 
         <form method="post" action="/project/completed/${active.project_id}/${active.id}">
-            <input type="hidden" name="title" value="${active.active_title}">
             <input type="hidden" name="text" value="${active.active_text}">
             <button>Complete</button>
         </form>
@@ -67,7 +63,6 @@ const getCompleted = async (id) => {
     const items = request.map((completed) => {
         return `
         <form method="post" action="/project/completed/delete/${completed.project_id}/${completed.id}">
-            <div>${completed.complete_title}</div>
             <div>${completed.complete_text}</div>
             <div>${completed.createdAt}
             <input type="hidden" name="id" value="${completed.id}">

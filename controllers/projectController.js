@@ -6,7 +6,6 @@ const addTodo = async (req, res) => {
 
     const item = await models.Todo.build({
         project_id: id,
-        todo_title: req.body.title,
         todo_text: req.body.text,
     })
 
@@ -47,12 +46,10 @@ const deleteTodo = async (req, res) => {
 const activate = async (req, res) => {
     const project_id = req.params.project_id
     const todo_id = req.params.todo_id
-    const title = req.body.title
     const text = req.body.text
 
     const activeItem = await models.Active.build({
         project_id: project_id,
-        active_title: title,
         active_text: text,
     })
 
@@ -101,12 +98,10 @@ const deleteActive = async (req, res) => {
 const complete = async (req, res) => {
     const project_id = req.params.project_id
     const active_id = req.params.active_id
-    const title = req.body.title
     const text = req.body.text
 
     const completedItem = await models.Complete.build({
         project_id: project_id,
-        complete_title: title,
         complete_text: text,
     })
 
