@@ -25,6 +25,11 @@ body {
     gap: 2rem;
 }
 
+.wrap2 {
+    display: flex;
+    flex-direction: column;
+}
+
 .project-meta {
     align-items: left;
     margin-top: 5rem;
@@ -49,7 +54,8 @@ body {
 .main {
     display: flex;
     gap: 3rem;
-    margin-top: 12rem;
+    margin-top: 2rem;
+
 }
 
 .status {
