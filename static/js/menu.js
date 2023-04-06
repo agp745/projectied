@@ -12,20 +12,20 @@ menuBtn.onclick = () => {
   cancelBtn.classList.add("show")
 }
 
-cancelBtn.onclick = () => {
-  items.classList.remove("active")
-  menuBtn.classList.remove("hide")
-  searchBtn.classList.remove("hide")
-  cancelBtn.classList.remove("show")
-  form.classList.remove("active")
-  cancelBtn.style.color = "#ff3d00"
-}
+// cancelBtn.onclick = () => {
+//   items.classList.remove("active")
+//   menuBtn.classList.remove("hide")
+//   searchBtn.classList.remove("hide")
+//   cancelBtn.classList.remove("show")
+//   form.classList.remove("active")
+//   cancelBtn.style.color = "#ff3d00"
+// }
 
-searchBtn.onclick = () => {
-  form.classList.add("active")
-  searchBtn.classList.add("hide")
-  cancelBtn.classList.add("show")
-}
+// searchBtn.onclick = () => {
+//   form.classList.add("active")
+//   searchBtn.classList.add("hide")
+//   cancelBtn.classList.add("show")
+// }
 
 function menuToggle() {
   const toggleMenu = document.querySelector('.soMenu')

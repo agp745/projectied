@@ -98,6 +98,29 @@ const renderProject = async (req, res) => {
     const username = req.oidc.user.nickname
     const imageURL = req.oidc.user.picture
 
+    const collaboratorsArr = await models.Share.findAll({
+        where: {
+            project_id: id,
+        },
+    })
+
+    const collaborators = await Promise.all(
+        collaboratorsArr.map(async (person) => {
+            const id = person.dataValues.user_id
+            const user = await models.User.findOne({
+                where: {
+                    id: id,
+                },
+            })
+
+            const collabInfo = {
+                user: user.dataValues.username,
+                image: user.dataValues.picture,
+            }
+            return collabInfo
+        })
+    )
+
     const metaData = {
         user: username,
         image: imageURL,
@@ -106,9 +129,49 @@ const renderProject = async (req, res) => {
         description: projectInfo.description,
         admin: user.dataValues.username,
         imageURL: projectInfo.imageURL,
+        collaborators: collaborators,
     }
 
+    console.log(collaborators)
+
     res.render("project", metaData)
+}
+
+const deleteProject = async (req, res) => {
+    const project_id = req.params.project_id
+
+    await models.Todo.destroy({
+        where: {
+            project_id: project_id,
+        },
+    })
+
+    await models.Active.destroy({
+        where: {
+            project_id: project_id,
+        },
+    })
+
+    await models.Complete.destroy({
+        where: {
+            project_id: project_id,
+        },
+    })
+
+    await models.Share.destroy({
+        where: {
+            project_id: project_id,
+        },
+    })
+
+    await models.Project.destroy({
+        where: {
+            id: project_id,
+        },
+    })
+
+    console.log("Project Deleted")
+    res.redirect("/home")
 }
 
 module.exports = {
@@ -116,4 +179,5 @@ module.exports = {
     createProjectPage,
     createProject,
     renderProject,
+    deleteProject,
 }

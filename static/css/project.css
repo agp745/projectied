@@ -30,6 +30,22 @@ body {
     flex-direction: column;
 }
 
+.deleteProButton {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 80px;
+    right: 35px;
+    font-size: 40px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.deleteProButton:hover {
+    color: #ff3d00
+}
+
 .project-meta {
     align-items: left;
     margin-top: 5rem;

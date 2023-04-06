@@ -3,8 +3,10 @@
         <div class="closeS">+</div>
         <h3>Collaborators</h3>
     <div class="collabList">
-        <img src="" alt="">
-        <h5>Name</h5>
+    {{#collaborators}}
+        <img src="{{image}}" alt="">
+        <h5>{{user}}</h5>
+    {{/collaborators}}
     </div>
     </div>
 </div>
