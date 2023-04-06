@@ -26,7 +26,7 @@ router.get("/project/active/:project_id", projectController.sendActives)
 
 router.post("/project/active/:project_id", projectController.addActive)
 
-router.post("/project/active/:project_id/:todo_id", projectController.activate)
+router.post("/project/active/:project_id/:todo_id/", projectController.activate)
 
 router.post(
     "/project/active/delete/:project_id/:active_id",
