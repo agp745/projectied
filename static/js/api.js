@@ -16,15 +16,16 @@ const getTodos = async (id) => {
     const items = request.map((todo) => {
         return `
         <div class="taskCard">
-            <form method="post" action="/project/todo/delete/${todo.project_id}/${todo.id}">
-                <div>${todo.todo_text}</div>
-                <div>${todo.createdAt}</div>
-                <input type="hidden" name="id" value="${todo.id}">
+            <form method="post" action="/project/todo/delete/${todo.info.project_id}/${todo.info.id}">
+                <div>${todo.info.todo_text}</div>
+                <div>${todo.info.date}</div>
+                <img src="${todo.image}">
+                <input type="hidden" name="id" value="${todo.info.id}">
                 <button>delete task</button>
             </form>
 
-            <form method="post" action="/project/active/${todo.project_id}/${todo.id}">
-                <input type="hidden" name="text" value="${todo.todo_text}">
+            <form method="post" action="/project/active/${todo.info.project_id}/${todo.info.id}">
+                <input type="hidden" name="text" value="${todo.info.todo_text}">
                 <button>Start</button>
             </form>
         </div>
@@ -42,15 +43,16 @@ const getActives = async (id) => {
     const items = request.map((active) => {
         return `
         <div class="taskCard">
-            <form method="post" action="/project/active/delete/${active.project_id}/${active.id}">
-                <div>${active.active_text}</div>
-                <div>${active.createdAt}</div>
-                <input type="hidden" name="id" value="${active.id}">
+            <form method="post" action="/project/active/delete/${active.info.project_id}/${active.info.id}">
+                <div>${active.info.active_text}</div>
+                <div>${active.info.date}</div>
+                <img src="${active.image}">
+                <input type="hidden" name="id" value="${active.info.id}">
                 <button>delete task</button>
             </form>
 
-            <form method="post" action="/project/completed/${active.project_id}/${active.id}">
-                <input type="hidden" name="text" value="${active.active_text}">
+            <form method="post" action="/project/completed/${active.info.project_id}/${active.info.id}">
+                <input type="hidden" name="text" value="${active.info.active_text}">
                 <button>Complete</button>
             </form>
         </div>
@@ -67,10 +69,11 @@ const getCompleted = async (id) => {
     const items = request.map((completed) => {
         return `
         <div class="taskCard">
-            <form method="post" action="/project/completed/delete/${completed.project_id}/${completed.id}">
-                <div>${completed.complete_text}</div>
-                <div>${completed.createdAt}</div>
-                <input type="hidden" name="id" value="${completed.id}">
+            <form method="post" action="/project/completed/delete/${completed.info.project_id}/${completed.info.id}">
+                <div>${completed.info.complete_text}</div>
+                <div>${completed.info.date}</div>
+                <img src="${completed.image}">
+                <input type="hidden" name="id" value="${completed.info.id}">
                 <button>delete task</button>
             </form>
         </div>
