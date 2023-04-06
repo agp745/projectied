@@ -8,6 +8,15 @@ const staticImages = [
     "images/sunsetmountains.jpg",
     "images/thegodtree.jpg",
     "images/montanamountains.jpg",
+    "images/oceansunset.jpg",
+    "images/cartoonwaves.jpg",
+    "images/carwarsh.jpg",
+    "images/colorfulpainting.jpg",
+    "images/darkdesert.jpg",
+    "images/geometry.jpg",
+    "images/pink-bubbles.jpg",
+    "images/red-blue-liquid.jpg",
+    "images/red-blue-liquid.jpg",
 ]
 
 const randomImage = (arr) => {
