@@ -15,17 +15,19 @@ const getTodos = async (id) => {
 
     const items = request.map((todo) => {
         return `
-        <form method="post" action="/project/todo/delete/${todo.project_id}/${todo.id}">
-            <div>${todo.todo_text}</div>
-            <div>${todo.createdAt}
-            <input type="hidden" name="id" value="${todo.id}">
-            <button>delete task</button>
-        </form>
+        <div class="taskCard">
+            <form method="post" action="/project/todo/delete/${todo.project_id}/${todo.id}">
+                <div>${todo.todo_text}</div>
+                <div>${todo.createdAt}</div>
+                <input type="hidden" name="id" value="${todo.id}">
+                <button>delete task</button>
+            </form>
 
-        <form method="post" action="/project/active/${todo.project_id}/${todo.id}">
-            <input type="hidden" name="text" value="${todo.todo_text}">
-            <button>Start</button>
-        </form>
+            <form method="post" action="/project/active/${todo.project_id}/${todo.id}">
+                <input type="hidden" name="text" value="${todo.todo_text}">
+                <button>Start</button>
+            </form>
+        </div>
         `
     })
     todoList.innerHTML += items.join(" ")
@@ -39,17 +41,19 @@ const getActives = async (id) => {
     console.log(request)
     const items = request.map((active) => {
         return `
-        <form method="post" action="/project/active/delete/${active.project_id}/${active.id}">
-            <div>${active.active_text}</div>
-            <div>${active.createdAt}
-            <input type="hidden" name="id" value="${active.id}">
-            <button>delete task</button>
-        </form>
+        <div class="taskCard">
+            <form method="post" action="/project/active/delete/${active.project_id}/${active.id}">
+                <div>${active.active_text}</div>
+                <div>${active.createdAt}</div>
+                <input type="hidden" name="id" value="${active.id}">
+                <button>delete task</button>
+            </form>
 
-        <form method="post" action="/project/completed/${active.project_id}/${active.id}">
-            <input type="hidden" name="text" value="${active.active_text}">
-            <button>Complete</button>
-        </form>
+            <form method="post" action="/project/completed/${active.project_id}/${active.id}">
+                <input type="hidden" name="text" value="${active.active_text}">
+                <button>Complete</button>
+            </form>
+        </div>
         `
     })
     activeList.innerHTML += items.join(" ")
@@ -62,12 +66,14 @@ const getCompleted = async (id) => {
 
     const items = request.map((completed) => {
         return `
-        <form method="post" action="/project/completed/delete/${completed.project_id}/${completed.id}">
-            <div>${completed.complete_text}</div>
-            <div>${completed.createdAt}
-            <input type="hidden" name="id" value="${completed.id}">
-            <button>delete task</button>
-        </form>
+        <div class="taskCard">
+            <form method="post" action="/project/completed/delete/${completed.project_id}/${completed.id}">
+                <div>${completed.complete_text}</div>
+                <div>${completed.createdAt}</div>
+                <input type="hidden" name="id" value="${completed.id}">
+                <button>delete task</button>
+            </form>
+        </div>
         `
     })
     completedList.innerHTML += items.join(" ")

@@ -49,20 +49,23 @@ body {
 .project-admin {
     font-style: italic;
     font-size: 1.2rem;
+
 }
 
 .main {
     display: flex;
     gap: 3rem;
     margin-top: 2rem;
-
+    margin-left: 15px;
 }
 
 .status {
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    background-color: #fff;
+    border-radius: 5px;
     width: 10rem;
+    padding: 5px;
 }
 
 .status-title {
@@ -170,3 +173,14 @@ body {
     color: aquamarine;
     cursor: pointer;
 }
+
+/* Todo Card */
+
+.taskCard {
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px #333;
+    margin: 0px -3px;
+}
+
+
