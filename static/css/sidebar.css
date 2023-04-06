@@ -20,6 +20,18 @@
     display: none;
 }
 
+.collab-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
 .modal-content {
     width: 500px;
     height: 300px;
@@ -49,6 +61,16 @@
 }
 
 .close {
+    position: absolute;
+    top: -9px;
+    right: 12px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    color: #fff;
+}
+
+.closeC {
     position: absolute;
     top: -9px;
     right: 12px;

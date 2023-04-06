@@ -15,6 +15,14 @@ function createPform() {
     document.querySelector('.bg-modal').style.display = 'flex';
 }
 
+function addCollabForm() {
+    document.querySelector('.collab-modal').style.display = 'flex';
+}
+
 document.querySelector('.close').addEventListener('click', function() {
     document.querySelector('.bg-modal').style.display = 'none'
+})
+
+document.querySelector('.closeC').addEventListener('click', function() {
+    document.querySelector('.collab-modal').style.display = 'none'
 })
