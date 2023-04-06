@@ -21,13 +21,23 @@
     <div id="projectId" style="display: none">{{project_id}}</div>
 
     <div class="content">
+
         {{> sidebar}}
+
         <div class="wrap2">
+
+        <div class="deleteProject">
+            <form action="/delete-project/{{project_id}}" method="POST">
+                <button class="deleteProButton"><i class='bx bx-trash' ></i></button>
+            </form>
+        </div>
+
         <section class="project-meta">
             <div class="project-title">{{title}}</div>
             <div class="project-description">{{description}}</div>
             <div class="project-admin">{{admin}}</div>
         </section>
+
 
         <section class="main">
         
@@ -70,6 +80,7 @@
                 </div>
             </div>
         </div>
+
         </section>
     </div>
 

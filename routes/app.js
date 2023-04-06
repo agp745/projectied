@@ -47,4 +47,9 @@ router.post(
     projectController.deleteCompleted
 )
 
+//----------------------------------------------------
+
+router.post('/delete-project/:project_id', appController.deleteProject)
+
+
 module.exports = router

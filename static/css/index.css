@@ -5,6 +5,20 @@ body {
     overflow-y: hidden;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url(../images/applelookinthing.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .content {
     display: flex;
     background-color: rgba(236, 242, 243, 0.315);
@@ -36,7 +50,7 @@ body {
 .projectList {
     display: flex;
     gap: 1.5rem;
-    background-color: black;
+    background-color: rgba(23, 28, 36, 0.8);
     padding: 1rem;
     overflow-x: scroll;
     border-radius: 5px;
@@ -57,6 +71,15 @@ body {
     height: 6rem;
     object-fit: cover;
 }
+
+
+
+
+
+
+
+
+
 
 * {
     margin: 0;
