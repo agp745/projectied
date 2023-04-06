@@ -24,6 +24,8 @@ router.post(
 
 router.get("/project/active/:project_id", projectController.sendActives)
 
+router.post("/project/active/:project_id", projectController.addActive)
+
 router.post("/project/active/:project_id/:todo_id", projectController.activate)
 
 router.post(
@@ -32,6 +34,8 @@ router.post(
 )
 
 router.get("/project/completed/:project_id", projectController.sendCompleted)
+
+router.post("/project/completed/:project_id", projectController.addCompleted)
 
 router.post(
     "/project/completed/:project_id/:active_id",
