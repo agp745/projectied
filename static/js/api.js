@@ -18,14 +18,15 @@ const getTodos = async (id) => {
         <div class="taskCard">
             <form method="post" action="/project/todo/delete/${todo.project_id}/${todo.id}">
                 <div>${todo.todo_text}</div>
-                <div>${todo.createdAt}</div>
+                <div class="dateStyle">${todo.createdAt}</div>
+                <br>
                 <input type="hidden" name="id" value="${todo.id}">
-                <button>delete task</button>
+                <button class="trashButton"><i class='bx bx-trash' ></i></button>
             </form>
 
             <form method="post" action="/project/active/${todo.project_id}/${todo.id}">
                 <input type="hidden" name="text" value="${todo.todo_text}">
-                <button>Start</button>
+                <button class="startButton"><i class='bx bx-right-arrow-alt'></i></button>
             </form>
         </div>
         `
@@ -44,14 +45,15 @@ const getActives = async (id) => {
         <div class="taskCard">
             <form method="post" action="/project/active/delete/${active.project_id}/${active.id}">
                 <div>${active.active_text}</div>
-                <div>${active.createdAt}</div>
+                <div class="dateStyle">${active.createdAt}</div>
+                <br>
                 <input type="hidden" name="id" value="${active.id}">
-                <button>delete task</button>
+                <button class="trashButton"><i class='bx bx-trash' ></i></button>
             </form>
 
             <form method="post" action="/project/completed/${active.project_id}/${active.id}">
                 <input type="hidden" name="text" value="${active.active_text}">
-                <button>Complete</button>
+                <button class="startButton"><i class='bx bx-right-arrow-alt'></i></button>
             </form>
         </div>
         `
@@ -69,9 +71,10 @@ const getCompleted = async (id) => {
         <div class="taskCard">
             <form method="post" action="/project/completed/delete/${completed.project_id}/${completed.id}">
                 <div>${completed.complete_text}</div>
-                <div>${completed.createdAt}</div>
+                <div class="dateStyle">${completed.createdAt}</div>
+                <br>
                 <input type="hidden" name="id" value="${completed.id}">
-                <button>delete task</button>
+                <button class="trashButton"><i class='bx bx-trash' ></i></button>
             </form>
         </div>
         `

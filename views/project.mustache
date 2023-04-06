@@ -34,12 +34,12 @@
             <div class="todo status">
                 <div class="status-title">Todo</div>
                 <div id="todoList" class="items"></div>
+                <br>
                 <div class="addTask">
                 <form action="/project/todo/{{project_id}}" method="post">
-                    <h4>Add Task:</h4>
-                    <input type="text" placeholder="text" name="text">
+                    <input type="text" placeholder="Add Task" name="text">
                     <input type="hidden" name="id" value={{project_id}}>
-                    <button>Submit</button>
+                    <button class="plusButton">+</button>
                 </form>
             </div>
             </div>
@@ -47,11 +47,12 @@
             <div class="active status">
                 <div class="status-title">Active</div>
                 <div id="activeList" class="items"></div>
+                <br>
                 <div class="addTask">
                 <form action="/project/active/{{project_id}}" method="post">
-                    <input type="text" placeholder="text" name="text">
+                    <input type="text" placeholder="Add Task" name="text">
                     <input type="hidden" name="id" value={{project_id}}>
-                    <button>Submit</button>
+                    <button class="plusButton">+</button>
                 </form>
             </div>
             </div>
@@ -59,11 +60,14 @@
             <div class="completed status">
                 <div class="status-title">Completed</div>
                 <div id="completedList" class="items"></div>
+                <br>
+                <div class="addTask">
                  <form action="/project/completed/{{project_id}}" method="post">
-                    <input type="text" placeholder="text" name="text">
+                    <input type="text" placeholder="Add Task" name="text">
                     <input type="hidden" name="id" value={{project_id}}>
-                    <button>Submit</button>
+                    <button class="plusButton">+</button>
                 </form>
+                </div>
             </div>
         </div>
         </section>
