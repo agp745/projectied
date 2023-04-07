@@ -23,8 +23,8 @@ const config = {
     auth0Logout: true,
     secret: process.env.AUTH_SECRET,
     baseURL: process.env.BASE_URL,
-    clientID: process.env.DEV_CLIENT_ID,
-    issuerBaseURL: process.env.DEV_ISSUER_BASE_URL,
+    clientID: process.env.CLIENT_ID,
+    issuerBaseURL: process.env.ISSUER_BASE_URL,
 }
 const routes = {
     login: false,
