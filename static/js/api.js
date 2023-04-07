@@ -4,7 +4,8 @@ const completedList = document.querySelector("#completedList")
 
 const project_id = document.querySelector("#projectId")
 
-const url = "http://localhost:8080"
+// const url = "http://localhost:8080"
+const url = "https://projectied.onrender.com"
 
 const id = project_id.innerText
 
