@@ -16,7 +16,6 @@ const staticImages = [
     "images/geometry.jpg",
     "images/pink-bubbles.jpg",
     "images/red-blue-liquid.jpg",
-    "images/red-blue-liquid.jpg",
 ]
 
 const devURL = "http://localhost:8080"
@@ -29,7 +28,7 @@ const randomImage = (arr) => {
 }
 
 const replaceImage = (imageArr, url) => {
-    let image = `${prodURL}/${randomImage(imageArr)}`
+    let image = `https://projectied.onrender.com/${randomImage(imageArr)}`
     if (!url.includes(".")) {
         const newURL = image
         return newURL
