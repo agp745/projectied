@@ -189,3 +189,18 @@
 .closeS:hover {
     color: #ff3d00;
 }
+
+.collabList {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.collabList img {
+    border-radius: 50%;
+}
+
+.collabList h5 {
+    font-size: 20px;
+    margin-left: 10px;
+}
