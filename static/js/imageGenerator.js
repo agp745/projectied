@@ -28,8 +28,7 @@ const randomImage = (arr) => {
 }
 
 const replaceImage = (imageArr, url) => {
-    // let image = `https://projectied.onrender.com/${randomImage(imageArr)}`
-    let image = `http://localhost:8080/${randomImage(imageArr)}`
+    let image = `https://projectied.onrender.com/${randomImage(imageArr)}`
     if (!url.includes(".")) {
         const newURL = image
         return newURL
