@@ -1,9 +1,7 @@
 # Projectied
 
-<!-- [![Projectied Logo](./static/icon/logo.ico.svg)](https://projectied.onrender.com/) -->
-<a href="https://projectied.onrender.com/"><img src="./static/icon/logo.ico.svg" alt="Projectied" width="3rem" height="3rem"></a>
-
 [projectied.onrender.com](https://projectied.onrender.com/)
+developed by: Evan Sedlar & Alex Perez
 
 Projectied (*pronounced: "project-tied"*) is a collaborative management app that allows users to create projects/lists and organize their tasks within each project. Users can add collaborators to their projects, so multiple people can work on them at once. The app offers the following features:
 
