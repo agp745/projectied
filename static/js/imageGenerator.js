@@ -16,7 +16,6 @@ const staticImages = [
     "images/geometry.jpg",
     "images/pink-bubbles.jpg",
     "images/red-blue-liquid.jpg",
-    "images/red-blue-liquid.jpg",
 ]
 
 const randomImage = (arr) => {
