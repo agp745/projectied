@@ -1,7 +1,7 @@
 # Projectied
 
 <!-- [![Projectied Logo](./static/icon/logo.ico.svg)](https://projectied.onrender.com/) -->
-<a href="https://projectied.onrender.com/"><img src="./static/icon/logo.ico.svg" alt="Projectied" style="max-width: 5rem"></a>
+<a href="https://projectied.onrender.com/"><img src="./static/icon/logo.ico.svg" alt="Projectied" width="3rem" height="3rem"></a>
 
 [projectied.onrender.com](https://projectied.onrender.com/)
 
